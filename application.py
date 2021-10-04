@@ -16,12 +16,14 @@
 # #     app.run()
 
 from flask import Flask
+from flask import Blueprint, render_template
+
 
 # print a nice greeting.
 
 
 def say_hello(username="World"):
-    return '<p>Hello %s!</p>\n' % username
+    return render_template("home.html")
 
 
 # some bits of text for the page.
