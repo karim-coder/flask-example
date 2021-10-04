@@ -1,6 +1,4 @@
 from flask import Flask
-from flask import Blueprint, render_template
-
 
 app = Flask(__name__)
 
