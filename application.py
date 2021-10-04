@@ -1,12 +1,14 @@
 from flask import Flask
+from flask import Blueprint, render_template
 
-application = Flask(__name__)
+
+app = Flask(__name__)
 
 
-@application.route('/')
+@app.route('/')
 def home():
-    return "Hi Talib"
-    # return render_template("home.html")
+    return render_template("home.html")
+    # return "Hi Talib"
 
 
 # if __name__ == '__main__':
