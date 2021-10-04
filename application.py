@@ -1,29 +1,31 @@
 from flask import Flask
-# from flask import Blueprint, render_template
-# from website import create_app
+from flask import Blueprint, render_template
 
 
-application = Flask(__name__)
+# application = Flask(__name__)
 
 
-@application.route('/')
-def hello_world():
-    return 'Hello there!'
-# def create_app():
-#     app = Flask(__name__)
-#     app.config['SECRET_KEY'] = 'my secret key'
+# @application.route('/')
+# def hello_world():
+#     return 'Hello there!'
+def create_app():
+    app = Flask(__name__)
+    app.config['SECRET_KEY'] = 'my secret key'
 
-#     app.register_blueprint(views, url_profix='/')
+    app.register_blueprint(views, url_profix='/')
 
-#     return app
-
-# views = Blueprint('views', __name__)
+    return app
 
 
-# @views.route('/')
-# def home():
-#     return render_template("home.html")
-# app = create_app()
+views = Blueprint('views', __name__)
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+
+@views.route('/')
+def home():
+    return render_template("home.html")
+
+
+app = create_app()
+
+if __name__ == '__main__':
+    app.run(debug=True)
